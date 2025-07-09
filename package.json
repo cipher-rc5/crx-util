@@ -1,0 +1,42 @@
+{
+  "name": "crx-util",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "^1.2.18",
+    "dprint": "^0.50.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "bin": {
+    "crx-extractor": "./index.ts"
+  },
+  "description": "Secure Chrome extension (CRX) file extractor for Bun",
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "crx",
+    "extractor",
+    "bun",
+    "typescript"
+  ],
+  "scripts": {
+    "setup": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
+    "clean": "chmod +x scripts/clean.sh && ./scripts/clean.sh",
+    "start": "bun run index.ts",
+    "dev": "bun run --watch index.ts",
+    "typecheck": "bun --bun tsc --noEmit",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "test:unit": "bun test src/**/*.test.ts",
+    "test:specific": "bun test --filter",
+    "format:dprint": "dprint fmt",
+    "format:dprint:check": "dprint check"
+  },
+  "type": "module"
+}
